@@ -3,8 +3,8 @@
 
 SELECT
 	name,
-	COUNT(*),
-	RANK() OVER (ORDER BY COUNT(*) DESC)
+	COUNT(rental.rental_id),
+	RANK() OVER (ORDER BY COUNT(rental.rental_id) DESC)
 FROM
 	category
 INNER JOIN film_category
