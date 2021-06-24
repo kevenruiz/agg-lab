@@ -4,7 +4,7 @@
 
 
 SELECT
-	amount,
+	email,
 	RANK() OVER (ORDER BY SUM(amount) DESC)
 FROM
 	customer
@@ -12,4 +12,4 @@ INNER JOIN rental
 ON rental.customer_id = customer.customer_id
 INNER JOIN payment
 ON payment.rental_id = rental.rental_id
-GROUP BY amount
+GROUP BY email
